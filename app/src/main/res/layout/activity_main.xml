@@ -8,23 +8,25 @@
     tools:context=".MainActivity">
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/et_username_register"
         android:layout_width="0dp"
         android:layout_height="@dimen/btn_height_size_50"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         android:background="@android:color/white"
         android:ems="10"
         android:hint="@string/username"
         android:inputType="textPersonName"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="Autofill" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/et_email_register"
         android:layout_width="0dp"
         android:layout_height="@dimen/btn_height_size_50"
         android:layout_marginTop="8dp"
@@ -32,13 +34,15 @@
         android:ems="10"
         android:hint="@string/email"
         android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toEndOf="@+id/editText"
-        app:layout_constraintStart_toStartOf="@+id/editText"
-        app:layout_constraintTop_toBottomOf="@+id/editText"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/et_username_register"
+        app:layout_constraintStart_toStartOf="@+id/et_username_register"
+        app:layout_constraintTop_toBottomOf="@+id/et_username_register"
         tools:ignore="Autofill" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/et_password_register"
         android:layout_width="0dp"
         android:layout_height="@dimen/btn_height_size_50"
         android:layout_marginTop="8dp"
@@ -46,8 +50,36 @@
         android:ems="10"
         android:hint="@string/password"
         android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="@+id/editText2"
-        app:layout_constraintStart_toStartOf="@+id/editText2"
-        app:layout_constraintTop_toBottomOf="@+id/editText2"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/et_email_register"
+        app:layout_constraintStart_toStartOf="@+id/et_email_register"
+        app:layout_constraintTop_toBottomOf="@+id/et_email_register"
         tools:ignore="Autofill" />
+
+    <Button
+        android:id="@+id/btn_register_register"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/btn_height_size_50"
+        android:layout_marginTop="8dp"
+        android:text="@string/register"
+        app:layout_constraintEnd_toEndOf="@+id/et_password_register"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/et_password_register"
+        app:layout_constraintTop_toBottomOf="@+id/et_password_register" />
+
+    <TextView
+        android:id="@+id/tv_already_have_an_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/already_have_an_account"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/btn_register_register"
+        app:layout_constraintStart_toStartOf="@+id/btn_register_register"
+        app:layout_constraintTop_toBottomOf="@+id/btn_register_register" />
 </androidx.constraintlayout.widget.ConstraintLayout>
