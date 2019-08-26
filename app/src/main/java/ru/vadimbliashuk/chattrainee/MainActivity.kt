@@ -1,5 +1,6 @@
 package ru.vadimbliashuk.chattrainee
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -28,10 +29,14 @@ class MainActivity : AppCompatActivity() {
         btn_register.setOnClickListener {
             Log.d("MainActivity", "Email is: ${et_email.text}")
             Log.d("MainActivity", "Password is: ${et_password.text}")
+
+            // Firebase Authentication to create a user with email and password
         }
 
         tv_already_have_an_account.setOnClickListener {
             Log.d("MainActivity", "Try to show login activity")
+                val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
         }
     }
 }
