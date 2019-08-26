@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--size elements-->
+    <dimen name="btn_height_size_50">50dp</dimen>
+    <dimen name="avatar_round_size">112dp</dimen>
+    <dimen name="space_maximum_72">72dp</dimen>
+
+</resources>
