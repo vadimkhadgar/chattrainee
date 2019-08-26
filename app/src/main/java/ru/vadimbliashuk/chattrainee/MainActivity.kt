@@ -35,9 +35,9 @@ class MainActivity : AppCompatActivity() {
 
         tv_already_have_an_account.setOnClickListener {
             Log.d("MainActivity", "Try to show login activity")
-                val intent = Intent(this, LoginActivity::class.java)
+            val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
-
+           //test
     }
 }
