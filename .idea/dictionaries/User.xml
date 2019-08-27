@@ -2,6 +2,7 @@
   <dictionary name="User">
     <words>
       <w>autofill</w>
+      <w>edittext</w>
       <w>firebase</w>
     </words>
   </dictionary>
