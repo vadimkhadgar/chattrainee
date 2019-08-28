@@ -33,10 +33,15 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:19.0.0'
     implementation 'com.google.firebase:firebase-storage:19.0.0'
     implementation 'com.google.firebase:firebase-firestore:21.0.0'
+    implementation "com.firebaseui:firebase-ui-auth:4.3.1"
+    implementation "com.firebaseui:firebase-ui-firestore:4.3.1"
 
     implementation 'de.hdodenhof:circleimageview:3.0.1'
+    implementation "com.xwray:groupie:2.5.1"
+    implementation 'com.squareup.picasso:picasso:2.71828'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
 }

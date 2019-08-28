@@ -5,6 +5,7 @@
       <w>edittext</w>
       <w>firebase</w>
       <w>firestore</w>
+      <w>newmessage</w>
     </words>
   </dictionary>
 </component>

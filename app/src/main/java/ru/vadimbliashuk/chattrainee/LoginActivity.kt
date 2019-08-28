@@ -1,5 +1,6 @@
 package ru.vadimbliashuk.chattrainee
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.util.Patterns
@@ -68,7 +69,7 @@ class LoginActivity : AppCompatActivity() {
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     val user = auth.currentUser
-                    //  updateUI(user)
+                      updateUI(user)
                 } else {
                     Toast.makeText(
                         baseContext, "Login failed.",
@@ -81,7 +82,8 @@ class LoginActivity : AppCompatActivity() {
 
     private fun updateUI(currentUser: FirebaseUser?) {
         if (currentUser != null) {
-            // startActivity(Intent(this, DashboardActivity::class.java))
+            val intent = Intent(this, LatestMessagesActivity::class.java)
+             startActivity(intent)
             finish()
         } else {
             Toast.makeText(

@@ -2,7 +2,6 @@ package ru.vadimbliashuk.chattrainee
 
 import android.app.Activity
 import android.content.Intent
-import android.graphics.drawable.BitmapDrawable
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
@@ -17,7 +16,6 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
-import kotlinx.android.synthetic.main.activity_register.*
 import ru.vadimbliashuk.chattrainee.models.User
 import java.util.*
 
@@ -157,7 +155,9 @@ class RegisterActivity : AppCompatActivity() {
             .set(user)
             .addOnSuccessListener {
                 Log.d("SignUpActivity", "DocumentSnapshot successfully added")
-                startActivity(Intent(this, LoginActivity::class.java))
+                val intent = Intent(this, LatestMessagesActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
+                startActivity(intent)
                 finish()
             }
             .addOnFailureListener { e ->
