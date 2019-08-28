@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/holo_green_light"
-    tools:context=".MainActivity">
+    tools:context=".RegisterActivity">
 
     <EditText
         android:id="@+id/et_username_register"
@@ -21,8 +21,9 @@
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_select_photo_register"
         tools:ignore="Autofill" />
 
     <EditText
@@ -85,4 +86,30 @@
         app:layout_constraintEnd_toEndOf="@+id/btn_register_register"
         app:layout_constraintStart_toStartOf="@+id/btn_register_register"
         app:layout_constraintTop_toBottomOf="@+id/btn_register_register" />
+
+    <Button
+        android:id="@+id/btn_select_photo_register"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/rounded_select_photo"
+        android:text="@string/select_photo"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/iv_select_photo_register"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:civ_border_color="@android:color/holo_green_dark"
+        app:civ_border_width="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_select_photo_register"
+        app:layout_constraintEnd_toEndOf="@+id/btn_select_photo_register"
+        app:layout_constraintStart_toStartOf="@+id/btn_select_photo_register"
+        app:layout_constraintTop_toTopOf="@+id/btn_select_photo_register" />
 </androidx.constraintlayout.widget.ConstraintLayout>
