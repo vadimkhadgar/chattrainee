@@ -1,5 +1,6 @@
 package ru.vadimbliashuk.chattrainee
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -69,7 +70,9 @@ class NewMessageActivity : AppCompatActivity() {
 //                AppConstants.USER_NAME to item.person.name,
 //                AppConstants.USER_ID to item.userId
 //            )
-            Toast.makeText(this, "Phew", Toast.LENGTH_LONG).show()
+            val intent = Intent(this, LatestMessagesActivity::class.java)
+            startActivity(intent)
+            Toast.makeText(this, "Phew ${item.person.username}", Toast.LENGTH_LONG).show()
         }
     }
 }
