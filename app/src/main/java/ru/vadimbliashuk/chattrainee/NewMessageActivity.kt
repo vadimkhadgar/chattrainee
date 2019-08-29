@@ -28,8 +28,7 @@ class NewMessageActivity : AppCompatActivity() {
         supportActionBar?.title = "Select User"
 
         userListenerRegistration =
-            FirestoreUtil.addUserListener(this.applicationContext, this::updateRecyclerView)
-
+            FirestoreUtil.addUserListener(this, this::updateRecyclerView)
 
     }
 
@@ -64,7 +63,7 @@ class NewMessageActivity : AppCompatActivity() {
         }
     }
 
-    private val onItemClick = OnItemClickListener { item, view ->
+    private val onItemClick = OnItemClickListener { item, _ ->
         if (item is UserItem) {
 //            startActivity<ChatActivity>(
 //                AppConstants.USER_NAME to item.person.name,
