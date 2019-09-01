@@ -1,4 +1,4 @@
-package ru.vadimbliashuk.chattrainee
+package ru.vadimbliashuk.chattrainee.registerlogin
 
 import android.content.Intent
 import android.os.Bundle
@@ -11,6 +11,8 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import ru.vadimbliashuk.chattrainee.R
+import ru.vadimbliashuk.chattrainee.messages.LatestMessagesActivity
 
 class LoginActivity : AppCompatActivity() {
 

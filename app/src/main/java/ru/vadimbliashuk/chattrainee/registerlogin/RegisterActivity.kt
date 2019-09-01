@@ -1,4 +1,4 @@
-package ru.vadimbliashuk.chattrainee
+package ru.vadimbliashuk.chattrainee.registerlogin
 
 import android.app.Activity
 import android.content.Intent
@@ -16,6 +16,8 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
+import ru.vadimbliashuk.chattrainee.R
+import ru.vadimbliashuk.chattrainee.messages.LatestMessagesActivity
 import ru.vadimbliashuk.chattrainee.models.User
 import java.util.*
 

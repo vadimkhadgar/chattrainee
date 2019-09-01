@@ -1,4 +1,4 @@
-package ru.vadimbliashuk.chattrainee
+package ru.vadimbliashuk.chattrainee.messages
 
 import android.content.Intent
 import android.os.Bundle
@@ -12,6 +12,7 @@ import com.xwray.groupie.Section
 import com.xwray.groupie.kotlinandroidextensions.Item
 import com.xwray.groupie.kotlinandroidextensions.ViewHolder
 import kotlinx.android.synthetic.main.activity_new_message.*
+import ru.vadimbliashuk.chattrainee.R
 import ru.vadimbliashuk.chattrainee.recyclerview.UserItem
 import ru.vadimbliashuk.chattrainee.util.FirestoreUtil
 
@@ -42,7 +43,7 @@ class NewMessageActivity : AppCompatActivity() {
     private fun updateRecyclerView(items: List<Item>) {
 
         fun init() {
-            rv_newmessage.apply {
+            recyclerview_new_message.apply {
                 layoutManager = LinearLayoutManager(this@NewMessageActivity)
                 adapter = GroupAdapter<ViewHolder>().apply {
                     peopleSection = Section(items)
@@ -64,15 +65,16 @@ class NewMessageActivity : AppCompatActivity() {
         }
     }
 
-    private val onItemClick = OnItemClickListener { item, _ ->
+    private val onItemClick = OnItemClickListener { item, view ->
         if (item is UserItem) {
 //            startActivity<ChatActivity>(
 //                AppConstants.USER_NAME to item.person.name,
 //                AppConstants.USER_ID to item.userId
 //            )
-            val intent = Intent(this, LatestMessagesActivity::class.java)
+            val intent = Intent(view.context, ChatLogActivity::class.java)
             startActivity(intent)
-            Toast.makeText(this, "Phew ${item.person.username}", Toast.LENGTH_LONG).show()
+            finish()
+          //  Toast.makeText(this, "User = ${item.person.username}", Toast.LENGTH_LONG).show()
         }
     }
 }
