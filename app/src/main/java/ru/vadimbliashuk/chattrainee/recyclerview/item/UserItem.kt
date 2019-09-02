@@ -1,4 +1,4 @@
-package ru.vadimbliashuk.chattrainee.recyclerview
+package ru.vadimbliashuk.chattrainee.recyclerview.item
 
 import android.content.Context
 import com.squareup.picasso.Picasso

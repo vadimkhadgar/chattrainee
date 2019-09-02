@@ -1,8 +1,6 @@
 package ru.vadimbliashuk.chattrainee.messages
 
-import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.firestore.ListenerRegistration
@@ -12,8 +10,11 @@ import com.xwray.groupie.Section
 import com.xwray.groupie.kotlinandroidextensions.Item
 import com.xwray.groupie.kotlinandroidextensions.ViewHolder
 import kotlinx.android.synthetic.main.activity_new_message.*
+import org.jetbrains.anko.startActivity
+import org.jetbrains.anko.support.v4.startActivity
+import ru.vadimbliashuk.chattrainee.AppConstants
 import ru.vadimbliashuk.chattrainee.R
-import ru.vadimbliashuk.chattrainee.recyclerview.UserItem
+import ru.vadimbliashuk.chattrainee.recyclerview.item.UserItem
 import ru.vadimbliashuk.chattrainee.util.FirestoreUtil
 
 
@@ -54,9 +55,9 @@ class NewMessageActivity : AppCompatActivity() {
             shouldInitRecyclerView = false
         }
 
-        fun updateItems() {
+        fun updateItems() = peopleSection.update(items)
 
-        }
+
 
         if (shouldInitRecyclerView) {
             init()
@@ -67,14 +68,10 @@ class NewMessageActivity : AppCompatActivity() {
 
     private val onItemClick = OnItemClickListener { item, view ->
         if (item is UserItem) {
-//            startActivity<ChatActivity>(
-//                AppConstants.USER_NAME to item.person.name,
-//                AppConstants.USER_ID to item.userId
-//            )
-            val intent = Intent(view.context, ChatLogActivity::class.java)
-            startActivity(intent)
-            finish()
-          //  Toast.makeText(this, "User = ${item.person.username}", Toast.LENGTH_LONG).show()
+           startActivity<ChatLogActivity>(
+               AppConstants.USER_NAME to item.person.username,
+               AppConstants.USER_ID to item.userId
+           )
         }
     }
 }
