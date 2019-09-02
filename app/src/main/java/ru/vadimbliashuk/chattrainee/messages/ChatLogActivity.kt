@@ -1,8 +1,8 @@
 package ru.vadimbliashuk.chattrainee.messages
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.firestore.ListenerRegistration
 import com.xwray.groupie.kotlinandroidextensions.Item
 import ru.vadimbliashuk.chattrainee.AppConstants
@@ -29,6 +29,6 @@ class ChatLogActivity : AppCompatActivity() {
     }
 
     private fun onMessageChanged(messages: List<Item>) {
-       Toast.makeText(this, "OnMessagesChangedRunning", Toast.LENGTH_LONG).show()
+        Toast.makeText(this, "OnMessagesChangedRunning", Toast.LENGTH_LONG).show()
     }
 }

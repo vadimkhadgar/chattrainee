@@ -11,7 +11,6 @@ import com.xwray.groupie.kotlinandroidextensions.Item
 import com.xwray.groupie.kotlinandroidextensions.ViewHolder
 import kotlinx.android.synthetic.main.activity_new_message.*
 import org.jetbrains.anko.startActivity
-import org.jetbrains.anko.support.v4.startActivity
 import ru.vadimbliashuk.chattrainee.AppConstants
 import ru.vadimbliashuk.chattrainee.R
 import ru.vadimbliashuk.chattrainee.recyclerview.item.UserItem
@@ -68,10 +67,10 @@ class NewMessageActivity : AppCompatActivity() {
 
     private val onItemClick = OnItemClickListener { item, view ->
         if (item is UserItem) {
-           startActivity<ChatLogActivity>(
-               AppConstants.USER_NAME to item.person.username,
-               AppConstants.USER_ID to item.userId
-           )
+            startActivity<ChatLogActivity>(
+                AppConstants.USER_NAME to item.person.username,
+                AppConstants.USER_ID to item.userId
+            )
         }
     }
 }
