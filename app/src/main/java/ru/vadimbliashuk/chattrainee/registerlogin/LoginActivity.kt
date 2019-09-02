@@ -71,7 +71,7 @@ class LoginActivity : AppCompatActivity() {
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     val user = auth.currentUser
-                      updateUI(user)
+                    updateUI(user)
                 } else {
                     Toast.makeText(
                         baseContext, "Login failed.",
@@ -85,7 +85,7 @@ class LoginActivity : AppCompatActivity() {
     private fun updateUI(currentUser: FirebaseUser?) {
         if (currentUser != null) {
             val intent = Intent(this, LatestMessagesActivity::class.java)
-             startActivity(intent)
+            startActivity(intent)
             finish()
         } else {
             Toast.makeText(

@@ -2,7 +2,7 @@ package ru.vadimbliashuk.chattrainee.models
 
 import java.util.*
 
-object MessageType{
+object MessageType {
     const val TEXT = "TEXT"
     const val IMAGE = "IMAGE"
 }

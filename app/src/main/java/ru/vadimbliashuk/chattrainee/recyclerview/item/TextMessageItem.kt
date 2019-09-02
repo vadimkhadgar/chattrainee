@@ -14,5 +14,5 @@ class TextMessageItem(
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    override fun getLayout(): Int  = R.layout.item_text_message
+    override fun getLayout(): Int = R.layout.item_text_message
 }

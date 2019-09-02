@@ -1,10 +1,10 @@
 package ru.vadimbliashuk.chattrainee.messages
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import ru.vadimbliashuk.chattrainee.R
 import ru.vadimbliashuk.chattrainee.registerlogin.RegisterActivity
@@ -20,7 +20,7 @@ class LatestMessagesActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        when (item?.itemId ) {
+        when (item?.itemId) {
             R.id.menu_new_message -> {
                 val intent = Intent(this, NewMessageActivity::class.java)
                 startActivity(intent)

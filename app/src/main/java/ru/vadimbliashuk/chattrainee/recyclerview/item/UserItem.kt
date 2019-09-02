@@ -2,17 +2,18 @@ package ru.vadimbliashuk.chattrainee.recyclerview.item
 
 import android.content.Context
 import com.squareup.picasso.Picasso
-import com.xwray.groupie.kotlinandroidextensions.ViewHolder
-import ru.vadimbliashuk.chattrainee.models.User
 import com.xwray.groupie.kotlinandroidextensions.Item
+import com.xwray.groupie.kotlinandroidextensions.ViewHolder
 import kotlinx.android.synthetic.main.user_row_new_message.view.*
 import ru.vadimbliashuk.chattrainee.R
+import ru.vadimbliashuk.chattrainee.models.User
 
 
-class UserItem (val person: User,
-                val userId: String,
-                private val context: Context)
-    : Item() {
+class UserItem(
+    val person: User,
+    val userId: String,
+    private val context: Context
+) : Item() {
     override fun bind(viewHolder: ViewHolder, position: Int) {
         viewHolder.itemView.tv_username_rv_item_newmessage_activity.text = person.username
 
