@@ -14,13 +14,13 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:ems="10"
         android:background="@android:color/white"
+        android:ems="10"
         android:hint="@string/enter_message"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btn_send_chat_log"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/image_btn_send_image_chat_log"
         tools:ignore="Autofill" />
 
     <Button
@@ -46,5 +46,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/image_btn_send_image_chat_log"
+        android:layout_width="@dimen/btn_height_size_50"
+        android:layout_height="@dimen/btn_height_size_50"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/rounded_button"
+        android:contentDescription="@string/send_image"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_image_white_24dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

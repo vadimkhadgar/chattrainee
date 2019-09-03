@@ -5,10 +5,7 @@ import android.util.Log
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.*
 import com.xwray.groupie.kotlinandroidextensions.Item
-import ru.vadimbliashuk.chattrainee.models.ChatChannel
-import ru.vadimbliashuk.chattrainee.models.MessageType
-import ru.vadimbliashuk.chattrainee.models.TextMessage
-import ru.vadimbliashuk.chattrainee.models.User
+import ru.vadimbliashuk.chattrainee.models.*
 import ru.vadimbliashuk.chattrainee.recyclerview.item.TextMessageItem
 import ru.vadimbliashuk.chattrainee.recyclerview.item.UserItem
 
@@ -101,5 +98,11 @@ object FirestoreUtil {
                 }
                 onListen(items)
             }
+    }
+
+    fun sendMessage(message: Message, channelId: String) {
+        chatChannelCollectionRef.document(channelId)
+            .collection("messages")
+            .add(message)
     }
 }
