@@ -4,6 +4,9 @@ import android.content.Context
 import android.util.Log
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.*
+import com.google.firebase.firestore.DocumentReference
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ListenerRegistration
 import com.xwray.groupie.kotlinandroidextensions.Item
 import ru.vadimbliashuk.chattrainee.models.*
 import ru.vadimbliashuk.chattrainee.recyclerview.item.TextMessageItem
@@ -19,6 +22,13 @@ object FirestoreUtil {
         )
 
     private val chatChannelCollectionRef = firestoreInstance.collection("chatChannels")
+
+    fun getCurrentUser(onComplete: (User) -> Unit) {
+        currentUserDocRef.get()
+            .addOnSuccessListener {
+                onComplete(it.toObject(User::class.java)!!)
+            }
+    }
 
     fun addUserListener(context: Context, onListen: (List<Item>) -> Unit): ListenerRegistration {
         return firestoreInstance.collection("users")

@@ -59,4 +59,10 @@ class TextMessageItem(
     override fun equals(other: Any?): Boolean {
         return isSameAs(other as? TextMessageItem)
     }
+
+    override fun hashCode(): Int {
+        var result = message.hashCode()
+        result = 31 * result + context.hashCode()
+        return result
+    }
 }

@@ -15,6 +15,7 @@ import ru.vadimbliashuk.chattrainee.AppConstants
 import ru.vadimbliashuk.chattrainee.R
 import ru.vadimbliashuk.chattrainee.models.MessageType
 import ru.vadimbliashuk.chattrainee.models.TextMessage
+import ru.vadimbliashuk.chattrainee.models.User
 import ru.vadimbliashuk.chattrainee.util.FirestoreUtil
 import java.util.*
 
@@ -31,6 +32,7 @@ class ChatLogActivity : AppCompatActivity() {
         supportActionBar?.title = intent.getStringExtra(AppConstants.USER_NAME)
 
         val otherUserId = intent.getStringExtra(AppConstants.USER_ID)
+
         FirestoreUtil.getOrCreateChatChannel(otherUserId) { channelId ->
             messageListenerRegistration =
                 FirestoreUtil.addChatMessageListener(channelId, this, this::updateRecyclerView)
@@ -39,7 +41,7 @@ class ChatLogActivity : AppCompatActivity() {
                 val messageToSend =
                     TextMessage(
                         et_enter_message_chat_log.text.toString(), Calendar.getInstance().time,
-                        FirebaseAuth.getInstance().currentUser!!.uid, MessageType.TEXT
+                        FirebaseAuth.getInstance().currentUser!!.uid, otherUserId, MessageType.TEXT
                     )
                 et_enter_message_chat_log.setText("")
                 FirestoreUtil.sendMessage(messageToSend, channelId)

@@ -153,7 +153,7 @@ class RegisterActivity : AppCompatActivity() {
         val user = User(uid, et_username_register.text.toString(), profileImageUrl)
 
         // Add a new document with a generated ID
-        db.collection("users").document(et_email_register.text.toString())
+        db.collection("users").document(uid)
             .set(user)
             .addOnSuccessListener {
                 Log.d("SignUpActivity", "DocumentSnapshot successfully added")

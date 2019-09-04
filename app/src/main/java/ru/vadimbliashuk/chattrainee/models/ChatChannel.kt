@@ -1,5 +1,5 @@
 package ru.vadimbliashuk.chattrainee.models
 
-class ChatChannel(val usersId: MutableList<String>) {
+class ChatChannel(val usersIds: MutableList<String>) {
     constructor() : this(mutableListOf())
 }
