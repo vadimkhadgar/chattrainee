@@ -19,7 +19,7 @@ class UserItem(
 
         Picasso.get()
             .load(person.profileImageUrl)
-            .resize(50, 50)
+            .resize(70, 70)
             .centerCrop()
             .into(viewHolder.itemView.iv_photo_rv_item_newmessage)
     }

@@ -31,7 +31,6 @@ class NewMessageActivity : AppCompatActivity() {
 
         userListenerRegistration =
             FirestoreUtil.addUserListener(this, this::updateRecyclerView)
-
     }
 
     override fun onDestroy() {
@@ -55,8 +54,6 @@ class NewMessageActivity : AppCompatActivity() {
         }
 
         fun updateItems() = peopleSection.update(items)
-
-
 
         if (shouldInitRecyclerView) {
             init()

@@ -1,7 +1,6 @@
 package ru.vadimbliashuk.chattrainee.messages
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.auth.FirebaseAuth
@@ -15,7 +14,6 @@ import ru.vadimbliashuk.chattrainee.AppConstants
 import ru.vadimbliashuk.chattrainee.R
 import ru.vadimbliashuk.chattrainee.models.MessageType
 import ru.vadimbliashuk.chattrainee.models.TextMessage
-import ru.vadimbliashuk.chattrainee.models.User
 import ru.vadimbliashuk.chattrainee.util.FirestoreUtil
 import java.util.*
 
@@ -50,8 +48,6 @@ class ChatLogActivity : AppCompatActivity() {
             image_btn_send_image_chat_log.setOnClickListener {
                 //TODO: Send Image Messages
             }
-
-
         }
     }
 
@@ -74,6 +70,6 @@ class ChatLogActivity : AppCompatActivity() {
         else
             updateItems()
 
-        recyclerview_chat_log.scrollToPosition(recyclerview_chat_log.adapter!!.itemCount -1)
+        recyclerview_chat_log.scrollToPosition(recyclerview_chat_log.adapter!!.itemCount - 1)
     }
 }

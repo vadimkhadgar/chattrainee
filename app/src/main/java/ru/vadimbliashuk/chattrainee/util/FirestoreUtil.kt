@@ -3,10 +3,11 @@ package ru.vadimbliashuk.chattrainee.util
 import android.content.Context
 import android.util.Log
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.*
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.FirebaseFirestoreException
 import com.google.firebase.firestore.ListenerRegistration
+import com.google.firebase.firestore.QuerySnapshot
 import com.xwray.groupie.kotlinandroidextensions.Item
 import ru.vadimbliashuk.chattrainee.models.*
 import ru.vadimbliashuk.chattrainee.recyclerview.item.TextMessageItem
@@ -51,7 +52,6 @@ object FirestoreUtil {
                     }
                 }
                 onListen(items)
-
 
             }
     }
