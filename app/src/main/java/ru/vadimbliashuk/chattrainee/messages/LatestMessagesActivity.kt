@@ -33,7 +33,7 @@ class LatestMessagesActivity : AppCompatActivity() {
         setContentView(R.layout.activity_latest_messages)
 
         userListenerRegistration =
-            FirestoreUtil.addUserListener(this, this::updateRecyclerView)
+            FirestoreUtil.addUserListenerWithMessage(this, this::updateRecyclerView)
 
         verifyUserIsLoggedIn()
     }

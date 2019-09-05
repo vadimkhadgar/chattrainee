@@ -58,6 +58,35 @@ object FirestoreUtil {
 
     fun removeListener(registration: ListenerRegistration) = registration.remove()
 
+
+  //  private val specialForFunctionBelow: DocumentReference = getCurrentUser {  }
+
+
+    fun addUserListenerWithMessage(context: Context, onListen: (List<Item>) -> Unit): ListenerRegistration {   // This function need recreate.
+        return firestoreInstance.collection("users")
+            .addSnapshotListener { querySnapshot: QuerySnapshot?, firebaseFirestoreException: FirebaseFirestoreException? ->
+                if (firebaseFirestoreException != null) {
+                    Log.e("FIRESTORE", "User Listener Error.", firebaseFirestoreException)
+                    return@addSnapshotListener
+                }
+
+                val items = mutableListOf<Item>()
+                querySnapshot!!.documents.forEach {
+                    if (it.id != firestoreInstance.collection("chatChannels").id) {
+                        items.add(
+                            UserItem(
+                                it.toObject(
+                                    User::class.java
+                                )!!, it.id, context
+                            )
+                        )
+                    }
+                }
+                onListen(items)
+
+            }
+    }
+
     fun getOrCreateChatChannel(
         otherUserId: String,
         onComplete: (channelId: String) -> Unit
